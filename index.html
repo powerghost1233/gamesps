@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerGhost PS | Tu Paraíso Gamer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; scroll-behavior: smooth; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
+        .accent-gradient { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+        
+        /* Animación de brillo para el banner */
+        .banner-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        .banner-glow:hover {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+            transform: scale(1.01);
+        }
+
+        /* Estilos personalizados para Ecwid */
+        #my-store-118912352 {
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="fixed w-full z-[100] glass border-b border-slate-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter accent-gradient bg-clip-text text-transparent italic uppercase">
+                POWERGHOST PS
+            </h1>
+            <div class="hidden md:flex space-x-6 text-sm font-bold uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-purple-400 transition">Inicio</a>
+                <a href="#tienda" class="hover:text-purple-400 transition">Tienda</a>
+                <a href="#cuentas" class="hover:text-purple-400 transition">Tipos de Cuenta</a>
+                <a href="#faq" class="hover:text-purple-400 transition">FAQ</a>
+                <a href="#contacto" class="hover:text-purple-400 transition">Soporte</a>
+            </div>
+            <a href="#contacto" class="md:hidden text-purple-500 text-2xl"><i class="fas fa-headset"></i></a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="pt-28 pb-10 px-4">
+        <div class="container mx-auto flex flex-col items-center">
+            <div class="banner-glow w-full max-w-5xl rounded-3xl border border-slate-700 shadow-2xl">
+                <img src="banner-powerghost.png" alt="PowerGhost PS Banner" class="w-full h-auto rounded-3xl">
+            </div>
+            <p class="mt-8 text-slate-400 text-center max-w-2xl italic">
+                "La forma más rápida y segura de obtener tus juegos favoritos de PlayStation al mejor precio del mercado."
+            </p>
+        </div>
+    </section>
+
+    <section id="tienda" class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-center gap-4 mb-10">
+                <div class="h-[1px] w-12 bg-purple-500"></div>
+                <h3 class="text-3xl font-black uppercase tracking-tighter">Catálogo Disponible</h3>
+                <div class="h-[1px] w-12 bg-purple-500"></div>
+            </div>
+            
+            <div id="my-store-118912352"></div>
+            <div>
+                <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?118912352&data_platform=code&data_date=2024-05-22" charset="utf-8"></script>
+                <script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-118912352");</script>
+            </div>
+        </div>
+    </section>
+
+    <section id="cuentas" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-center text-3xl font-bold mb-12 uppercase tracking-widest">¿Qué cuenta elegir?</h3>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="glass p-8 rounded-2xl border-t-4 border-purple-500 hover:bg-slate-800 transition">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-crown text-purple-500 text-4xl mr-4"></i>
+                        <h4 class="text-2xl font-bold">CUENTA PRIMARIA</h4>
+                    </div>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Juegas desde tu <strong>usuario personal</strong>.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Trofeos y progresos en tu cuenta de siempre.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>No necesitas internet para jugar (Modo Offline).</span></li>
+                    </ul>
+                </div>
+                <div class="glass p-8 rounded-2xl border-t-4 border-blue-500 hover:bg-slate-800 transition">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-gamepad text-blue-500 text-4xl mr-4"></i>
+                        <h4 class="text-2xl font-bold">CUENTA SECUNDARIA</h4>
+                    </div>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Juegas desde el <strong>usuario enviado</strong>.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Requiere conexión a internet constante.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>La opción más económica para pasarte un juego.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 px-4">
+        <div class="container mx-auto max-w-3xl">
+            <h3 class="text-3xl font-bold text-center mb-12 italic text-purple-400 uppercase">Preguntas Frecuentes</h3>
+            <div class="space-y-4">
+                <details class="glass p-5 rounded-xl border border-slate-700 cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center uppercase text-sm">¿Cómo recibo mi compra? <i class="fas fa-plus text-xs"></i></summary>
+                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">Tras el pago, te contactaremos por WhatsApp o Email para entregarte las credenciales de la cuenta y una guía de instalación paso a paso.</p>
+                </details>
+                <details class="glass p-5 rounded-xl border border-slate-700 cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center uppercase text-sm">¿Los juegos son originales? <i class="fas fa-plus text-xs"></i></summary>
+                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">Sí, son juegos 100% originales descargados directamente de la PlayStation Store oficial.</p>
+                </details>
+                <details class="glass p-5 rounded-xl border border-slate-700 cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center uppercase text-sm">¿Tienen garantía? <i class="fas fa-plus text-xs"></i></summary>
+                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">Ofrecemos garantía ante cualquier problema de acceso, siempre que se cumplan las normas de seguridad explicadas en la guía.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-slate-900 px-4 border-t border-slate-800">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6 italic uppercase">PowerGhost PS</h3>
+            <p class="text-slate-400 max-w-xl mx-auto mb-12 text-sm uppercase tracking-widest">Soporte dedicado - Entrega Inmediata - Precios Imbatibles</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://wa.me/TU_NUMERO_AQUI" class="accent-gradient p-[1px] rounded-2xl transition hover:scale-105">
+                    <div class="bg-slate-900 px-10 py-6 rounded-2xl flex flex-col items-center">
+                        <i class="fab fa-whatsapp text-3xl text-green-500 mb-2"></i>
+                        <span class="font-bold uppercase text-xs">Ventas WhatsApp</span>
+                    </div>
+                </a>
+                <a href="#" class="accent-gradient p-[1px] rounded-2xl transition hover:scale-105">
+                    <div class="bg-slate-900 px-10 py-6 rounded-2xl flex flex-col items-center">
+                        <i class="fab fa-instagram text-3xl text-pink-500 mb-2"></i>
+                        <span class="font-bold uppercase text-xs">Instagram Oficial</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-slate-600 text-xs border-t border-slate-800 uppercase tracking-widest">
+        <p>&copy; 2026 PowerGhost PS. No somos parte de Sony Interactive Ent.</p>
+    </footer>
+
+</body>
+</html>
