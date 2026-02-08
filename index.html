@@ -1,155 +1,443 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerGhost PS | Tu Paraíso Gamer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #0f172a; color: #f8fafc; scroll-behavior: smooth; }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
-        .accent-gradient { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
-        
-        /* Animación de brillo para el banner */
-        .banner-glow {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-        .banner-glow:hover {
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
-            transform: scale(1.01);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerGhost PS | Juegos PS5 digitales al mejor precio</title>
 
-        /* Estilos personalizados para Ecwid */
-        #my-store-118912352 {
-            padding: 20px;
-            background: rgba(30, 41, 59, 0.3);
-            border-radius: 20px;
-        }
-    </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Fuente moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#05070c;
+      --bg1:#070a12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.08);
+      --stroke: rgba(148,163,184,.18);
+      --stroke2: rgba(148,163,184,.28);
+      --text: #e5e7eb;
+      --muted: rgba(226,232,240,.72);
+      --blue: #3b82f6;
+      --cyan: #22d3ee;
+      --ice: #e2e8f0;
+    }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 650px at 18% -10%, rgba(59,130,246,.35), transparent 55%),
+        radial-gradient(900px 650px at 100% 0%, rgba(34,211,238,.22), transparent 60%),
+        radial-gradient(900px 650px at 35% 120%, rgba(59,130,246,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color: var(--text);
+    }
+
+    .glass{
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .glass-strong{
+      background: var(--panel2);
+      border: 1px solid var(--stroke2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(59,130,246,1), rgba(34,211,238,1));
+      box-shadow: 0 18px 55px rgba(59,130,246,.18);
+    }
+    .btn-primary:hover{ filter: brightness(1.03); transform: translateY(-1px); }
+
+    .lift{ transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .lift:hover{ transform: translateY(-2px); border-color: rgba(148,163,184,.35); box-shadow: 0 22px 70px rgba(0,0,0,.50); }
+
+    /* Barra superior al hacer scroll */
+    .nav-scrolled{
+      box-shadow: 0 12px 45px rgba(0,0,0,.55);
+      border-color: rgba(148,163,184,.22) !important;
+    }
+
+    /* Marco del banner */
+    .media-frame{
+      position: relative;
+      overflow: hidden;
+    }
+    .media-frame::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: linear-gradient(90deg, rgba(59,130,246,.0), rgba(59,130,246,.65), rgba(34,211,238,.55), rgba(59,130,246,.0));
+      filter: blur(18px);
+      opacity:.55;
+      pointer-events:none;
+      transform: translateX(-25%);
+      animation: sheen 7s ease-in-out infinite;
+    }
+    @keyframes sheen{
+      0%{ transform: translateX(-35%); opacity:.40; }
+      50%{ transform: translateX(35%); opacity:.70; }
+      100%{ transform: translateX(-35%); opacity:.40; }
+    }
+
+    /* Ecwid */
+    #my-store-118912352{
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--stroke);
+    }
+
+    /* FAQ icon rotate */
+    details[open] summary .plus{ transform: rotate(45deg); }
+    .plus{ transition: transform .2s ease; }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .media-frame::before{ animation:none; }
+      .lift{ transition:none; }
+      .btn-primary:hover{ transform:none; }
+    }
+  </style>
 </head>
-<body class="font-sans">
 
-    <nav class="fixed w-full z-[100] glass border-b border-slate-700 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-tighter accent-gradient bg-clip-text text-transparent italic uppercase">
-                POWERGHOST PS
-            </h1>
-            <div class="hidden md:flex space-x-6 text-sm font-bold uppercase tracking-widest">
-                <a href="#inicio" class="hover:text-purple-400 transition">Inicio</a>
-                <a href="#tienda" class="hover:text-purple-400 transition">Tienda</a>
-                <a href="#cuentas" class="hover:text-purple-400 transition">Tipos de Cuenta</a>
-                <a href="#faq" class="hover:text-purple-400 transition">FAQ</a>
-                <a href="#contacto" class="hover:text-purple-400 transition">Soporte</a>
-            </div>
-            <a href="#contacto" class="md:hidden text-purple-500 text-2xl"><i class="fas fa-headset"></i></a>
+<body class="min-h-screen">
+
+  <!-- WhatsApp flotante (pro y discreto) -->
+  <a href="https://wa.me/TU_NUMERO_AQUI" class="fixed z-[200] bottom-5 right-5 md:bottom-7 md:right-7 lift" aria-label="WhatsApp">
+    <div class="glass-strong px-4 py-3 rounded-full flex items-center gap-3">
+      <i class="fab fa-whatsapp text-xl text-green-400"></i>
+      <span class="hidden md:inline text-sm font-semibold">Soporte / Compra</span>
+    </div>
+  </a>
+
+  <!-- NAV -->
+  <nav id="topbar" class="fixed w-full z-[100] glass border-b border-slate-700/40">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3">
+        <!-- Si tienes logo, ponlo aquí -->
+        <!-- <img src="logo-powerghost.png" class="h-10 w-10 rounded-xl border border-slate-700/40" alt="PowerGhost PS"> -->
+        <div>
+          <div class="text-xl md:text-2xl font-extrabold tracking-tight text-slate-100">
+            PowerGhost <span class="text-slate-300">PS</span>
+          </div>
+          <div class="text-[11px] uppercase tracking-[0.22em] text-slate-400">
+            Juegos PS5 digitales al mejor precio
+          </div>
         </div>
-    </nav>
+      </a>
 
-    <section id="inicio" class="pt-28 pb-10 px-4">
-        <div class="container mx-auto flex flex-col items-center">
-            <div class="banner-glow w-full max-w-5xl rounded-3xl border border-slate-700 shadow-2xl">
-                <img src="banner-powerghost.png" alt="PowerGhost PS Banner" class="w-full h-auto rounded-3xl">
+      <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-200/90">
+        <a href="#tienda" class="hover:text-white transition">Tienda</a>
+        <a href="#como" class="hover:text-white transition">Cómo funciona</a>
+        <a href="#cuentas" class="hover:text-white transition">Cuentas</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+        <a href="#contacto" class="hover:text-white transition">Contacto</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#tienda" class="hidden sm:inline-flex">
+          <button class="btn-primary text-slate-950 font-extrabold px-5 py-2.5 rounded-2xl transition lift">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Ver catálogo
+          </button>
+        </a>
+        <a href="#contacto" class="md:hidden text-slate-200 text-2xl">
+          <i class="fas fa-headset"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="pt-28 md:pt-32 pb-12 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-slate-700/40 text-xs uppercase tracking-[0.2em] text-slate-300">
+            <i class="fa-solid fa-shield-halved text-cyan-200"></i>
+            España · Entrega guiada · Soporte real
+          </div>
+
+          <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] text-slate-50">
+            Juegos PS5 digitales<br>
+            <span class="text-slate-300">al mejor precio.</span>
+          </h1>
+
+          <p class="mt-4 text-slate-300/90 text-base md:text-lg max-w-xl">
+            Catálogo actualizado, compra sencilla y ayuda paso a paso para instalar.
+            Entra, elige tu juego y listo.
+          </p>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="#tienda">
+              <button class="w-full sm:w-auto btn-primary text-slate-950 font-extrabold px-6 py-3 rounded-2xl transition lift">
+                Entrar a la tienda <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+            </a>
+
+            <a href="#como">
+              <button class="w-full sm:w-auto glass-strong font-semibold px-6 py-3 rounded-2xl transition lift">
+                Cómo funciona <i class="fa-regular fa-circle-question ml-2 text-slate-300"></i>
+              </button>
+            </a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
+            <div class="glass p-3 rounded-2xl">
+              <div class="text-xs text-slate-400 uppercase tracking-widest">Entrega</div>
+              <div class="font-extrabold">Rápida</div>
             </div>
-            <p class="mt-8 text-slate-400 text-center max-w-2xl italic">
-                "La forma más rápida y segura de obtener tus juegos favoritos de PlayStation al mejor precio del mercado."
-            </p>
+            <div class="glass p-3 rounded-2xl">
+              <div class="text-xs text-slate-400 uppercase tracking-widest">Soporte</div>
+              <div class="font-extrabold">WhatsApp</div>
+            </div>
+            <div class="glass p-3 rounded-2xl">
+              <div class="text-xs text-slate-400 uppercase tracking-widest">Guía</div>
+              <div class="font-extrabold">Paso a paso</div>
+            </div>
+            <div class="glass p-3 rounded-2xl">
+              <div class="text-xs text-slate-400 uppercase tracking-widest">Pago</div>
+              <div class="font-extrabold">Seguro</div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <section id="tienda" class="py-16 px-4">
-        <div class="container mx-auto">
-            <div class="flex items-center justify-center gap-4 mb-10">
-                <div class="h-[1px] w-12 bg-purple-500"></div>
-                <h3 class="text-3xl font-black uppercase tracking-tighter">Catálogo Disponible</h3>
-                <div class="h-[1px] w-12 bg-purple-500"></div>
+        <div>
+          <div class="media-frame rounded-3xl border border-slate-700/40 shadow-2xl lift">
+            <img src="banner-powerghost.png" alt="PowerGhost PS" class="w-full h-auto rounded-3xl">
+          </div>
+          <div class="mt-4 text-center text-slate-400 text-sm">
+            Compra directa desde la tienda integrada · soporte en minutos
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section id="como" class="py-16 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+          Cómo funciona <span class="text-slate-300">(rápido y claro)</span>
+        </h2>
+        <div class="hidden md:block text-slate-400 text-sm">3 pasos · sin líos</div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="glass-strong p-6 rounded-3xl lift">
+          <div class="h-11 w-11 rounded-2xl bg-slate-950/60 border border-slate-700/40 flex items-center justify-center mb-4">
+            <i class="fa-solid fa-magnifying-glass text-cyan-200"></i>
+          </div>
+          <h3 class="font-extrabold text-lg">1) Elige tu juego</h3>
+          <p class="text-slate-400 text-sm mt-2">Busca en el catálogo, filtra por categorías y entra al producto.</p>
+        </div>
+
+        <div class="glass-strong p-6 rounded-3xl lift">
+          <div class="h-11 w-11 rounded-2xl bg-slate-950/60 border border-slate-700/40 flex items-center justify-center mb-4">
+            <i class="fa-solid fa-credit-card text-blue-300"></i>
+          </div>
+          <h3 class="font-extrabold text-lg">2) Compra en la tienda</h3>
+          <p class="text-slate-400 text-sm mt-2">Finaliza el pedido de forma sencilla y recibe confirmación.</p>
+        </div>
+
+        <div class="glass-strong p-6 rounded-3xl lift">
+          <div class="h-11 w-11 rounded-2xl bg-slate-950/60 border border-slate-700/40 flex items-center justify-center mb-4">
+            <i class="fa-solid fa-headset text-slate-200"></i>
+          </div>
+          <h3 class="font-extrabold text-lg">3) Entrega guiada</h3>
+          <p class="text-slate-400 text-sm mt-2">Te enviamos acceso + guía y te ayudamos si hace falta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA -->
+  <section id="tienda" class="py-16 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+            Tienda <span class="text-slate-300">PowerGhost PS</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-1">Catálogo integrado (Ecwid). Compra directa aquí.</p>
+        </div>
+
+        <a href="https://wa.me/TU_NUMERO_AQUI" class="hidden md:inline-flex">
+          <button class="glass-strong px-5 py-2.5 rounded-2xl font-semibold lift">
+            <i class="fab fa-whatsapp text-green-400 mr-2"></i> Preguntar por WhatsApp
+          </button>
+        </a>
+      </div>
+
+      <div class="glass rounded-3xl p-4 md:p-6 border border-slate-700/40 lift">
+        <div id="my-store-118912352"></div>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="https://app.ecwid.com/script.js?118912352&data_platform=code&data_date=2024-05-22"
+          charset="utf-8"></script>
+
+        <script type="text/javascript">
+          xProductBrowser(
+            "categoriesPerRow=3",
+            "views=grid(24,3) list(60) table(60)",
+            "categoryView=grid",
+            "searchView=list",
+            "id=my-store-118912352"
+          );
+        </script>
+      </div>
+
+      <div class="mt-5 text-xs text-slate-500">
+        * PowerGhost PS no está afiliada a Sony Interactive Entertainment.
+      </div>
+    </div>
+  </section>
+
+  <!-- CUENTAS -->
+  <section id="cuentas" class="py-18 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Tipos de cuenta</h2>
+        <p class="text-slate-400 mt-2">Elige según cómo quieras jugar: comodidad vs ahorro.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-5">
+        <div class="glass-strong p-7 rounded-3xl lift">
+          <div class="flex items-center gap-4">
+            <div class="h-12 w-12 rounded-2xl bg-slate-950/60 border border-slate-700/40 flex items-center justify-center">
+              <i class="fa-solid fa-crown text-cyan-200"></i>
             </div>
-            
-            <div id="my-store-118912352"></div>
             <div>
-                <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?118912352&data_platform=code&data_date=2024-05-22" charset="utf-8"></script>
-                <script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-118912352");</script>
+              <div class="text-xl font-extrabold">Cuenta Primaria</div>
+              <div class="text-sm text-slate-400">La más cómoda (recomendada)</div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <section id="cuentas" class="py-20 bg-slate-900/50">
-        <div class="container mx-auto px-4">
-            <h3 class="text-center text-3xl font-bold mb-12 uppercase tracking-widest">¿Qué cuenta elegir?</h3>
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="glass p-8 rounded-2xl border-t-4 border-purple-500 hover:bg-slate-800 transition">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-crown text-purple-500 text-4xl mr-4"></i>
-                        <h4 class="text-2xl font-bold">CUENTA PRIMARIA</h4>
-                    </div>
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Juegas desde tu <strong>usuario personal</strong>.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Trofeos y progresos en tu cuenta de siempre.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>No necesitas internet para jugar (Modo Offline).</span></li>
-                    </ul>
-                </div>
-                <div class="glass p-8 rounded-2xl border-t-4 border-blue-500 hover:bg-slate-800 transition">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-gamepad text-blue-500 text-4xl mr-4"></i>
-                        <h4 class="text-2xl font-bold">CUENTA SECUNDARIA</h4>
-                    </div>
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Juegas desde el <strong>usuario enviado</strong>.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>Requiere conexión a internet constante.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i> <span>La opción más económica para pasarte un juego.</span></li>
-                    </ul>
-                </div>
+          <ul class="mt-5 space-y-3 text-slate-200/90">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-green-400 mt-1"></i> Juegas desde tu <strong>usuario personal</strong>.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-green-400 mt-1"></i> Trofeos y progresos en tu cuenta.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-green-400 mt-1"></i> Offline en tu consola principal.</li>
+          </ul>
+        </div>
+
+        <div class="glass-strong p-7 rounded-3xl lift">
+          <div class="flex items-center gap-4">
+            <div class="h-12 w-12 rounded-2xl bg-slate-950/60 border border-slate-700/40 flex items-center justify-center">
+              <i class="fa-solid fa-gamepad text-blue-300"></i>
             </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-20 px-4">
-        <div class="container mx-auto max-w-3xl">
-            <h3 class="text-3xl font-bold text-center mb-12 italic text-purple-400 uppercase">Preguntas Frecuentes</h3>
-            <div class="space-y-4">
-                <details class="glass p-5 rounded-xl border border-slate-700 cursor-pointer">
-                    <summary class="font-bold flex justify-between items-center uppercase text-sm">¿Cómo recibo mi compra? <i class="fas fa-plus text-xs"></i></summary>
-                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">Tras el pago, te contactaremos por WhatsApp o Email para entregarte las credenciales de la cuenta y una guía de instalación paso a paso.</p>
-                </details>
-                <details class="glass p-5 rounded-xl border border-slate-700 cursor-pointer">
-                    <summary class="font-bold flex justify-between items-center uppercase text-sm">¿Los juegos son originales? <i class="fas fa-plus text-xs"></i></summary>
-                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">Sí, son juegos 100% originales descargados directamente de la PlayStation Store oficial.</p>
-                </details>
-                <details class="glass p-5 rounded-xl border border-slate-700 cursor-pointer">
-                    <summary class="font-bold flex justify-between items-center uppercase text-sm">¿Tienen garantía? <i class="fas fa-plus text-xs"></i></summary>
-                    <p class="mt-4 text-slate-400 text-sm leading-relaxed">Ofrecemos garantía ante cualquier problema de acceso, siempre que se cumplan las normas de seguridad explicadas en la guía.</p>
-                </details>
+            <div>
+              <div class="text-xl font-extrabold">Cuenta Secundaria</div>
+              <div class="text-sm text-slate-400">La más barata para “pasarte uno”</div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <section id="contacto" class="py-20 bg-slate-900 px-4 border-t border-slate-800">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-6 italic uppercase">PowerGhost PS</h3>
-            <p class="text-slate-400 max-w-xl mx-auto mb-12 text-sm uppercase tracking-widest">Soporte dedicado - Entrega Inmediata - Precios Imbatibles</p>
-            
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://wa.me/TU_NUMERO_AQUI" class="accent-gradient p-[1px] rounded-2xl transition hover:scale-105">
-                    <div class="bg-slate-900 px-10 py-6 rounded-2xl flex flex-col items-center">
-                        <i class="fab fa-whatsapp text-3xl text-green-500 mb-2"></i>
-                        <span class="font-bold uppercase text-xs">Ventas WhatsApp</span>
-                    </div>
-                </a>
-                <a href="#" class="accent-gradient p-[1px] rounded-2xl transition hover:scale-105">
-                    <div class="bg-slate-900 px-10 py-6 rounded-2xl flex flex-col items-center">
-                        <i class="fab fa-instagram text-3xl text-pink-500 mb-2"></i>
-                        <span class="font-bold uppercase text-xs">Instagram Oficial</span>
-                    </div>
-                </a>
-            </div>
+          <ul class="mt-5 space-y-3 text-slate-200/90">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-green-400 mt-1"></i> Juegas desde el <strong>usuario enviado</strong>.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-green-400 mt-1"></i> Necesita internet constante.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-green-400 mt-1"></i> Ideal para ahorrar.</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="py-10 text-center text-slate-600 text-xs border-t border-slate-800 uppercase tracking-widest">
-        <p>&copy; 2026 PowerGhost PS. No somos parte de Sony Interactive Ent.</p>
-    </footer>
+  <!-- FAQ -->
+  <section id="faq" class="py-16 px-4">
+    <div class="container mx-auto max-w-3xl">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Preguntas frecuentes</h2>
+        <p class="text-slate-400 mt-2">Respuestas rápidas y sin historias.</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="glass p-5 rounded-2xl lift">
+          <summary class="font-semibold flex justify-between items-center cursor-pointer">
+            ¿Cómo recibo mi compra?
+            <i class="fa-solid fa-plus plus text-slate-300"></i>
+          </summary>
+          <p class="mt-4 text-slate-400 text-sm leading-relaxed">
+            Tras el pago, te contactamos por WhatsApp o email para entregarte credenciales y guía paso a paso.
+          </p>
+        </details>
+
+        <details class="glass p-5 rounded-2xl lift">
+          <summary class="font-semibold flex justify-between items-center cursor-pointer">
+            ¿Los juegos son originales?
+            <i class="fa-solid fa-plus plus text-slate-300"></i>
+          </summary>
+          <p class="mt-4 text-slate-400 text-sm leading-relaxed">
+            Sí, son juegos originales adquiridos en PlayStation Store y descargables desde la consola.
+          </p>
+        </details>
+
+        <details class="glass p-5 rounded-2xl lift">
+          <summary class="font-semibold flex justify-between items-center cursor-pointer">
+            ¿Tenéis garantía / soporte?
+            <i class="fa-solid fa-plus plus text-slate-300"></i>
+          </summary>
+          <p class="mt-4 text-slate-400 text-sm leading-relaxed">
+            Tienes soporte ante incidencias de acceso siempre que se cumplan las normas de seguridad de la guía.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-16 px-4 border-t border-slate-800/60">
+    <div class="container mx-auto max-w-6xl">
+      <div class="glass-strong rounded-3xl p-8 md:p-10 lift">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+              Soporte y pedidos
+            </h2>
+            <p class="text-slate-400 mt-2">
+              Escríbenos y te contestamos rápido. Si ya has comprado, te ayudamos con la instalación.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 justify-end">
+            <a href="https://wa.me/TU_NUMERO_AQUI" class="w-full sm:w-auto">
+              <button class="w-full btn-primary text-slate-950 font-extrabold px-6 py-3 rounded-2xl transition lift">
+                <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+              </button>
+            </a>
+            <a href="#" class="w-full sm:w-auto">
+              <button class="w-full glass px-6 py-3 rounded-2xl font-semibold lift">
+                <i class="fab fa-instagram mr-2 text-pink-400"></i> Instagram
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 text-xs text-slate-500">
+          &copy; 2026 PowerGhost PS · No afiliados a Sony Interactive Entertainment.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const topbar = document.getElementById("topbar");
+    const onScroll = () => {
+      if (window.scrollY > 8) topbar.classList.add("nav-scrolled");
+      else topbar.classList.remove("nav-scrolled");
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+  </script>
 
 </body>
 </html>
